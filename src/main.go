@@ -50,10 +50,7 @@ func sendTopic(ctx context.Context, project, order string) {
 			log.Fatal(err)
 		}
 	}()
-	err = topic.Send(ctx, &pubsub.Message{
-		Body: []byte(order),
-	})
-	if err != nil {
+	if err := topic.Send(ctx, &pubsub.Message{Body: []byte(order)}); err != nil {
 		log.Fatal(err)
 	}
 }
