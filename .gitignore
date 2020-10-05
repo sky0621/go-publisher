@@ -11,3 +11,5 @@
 *.out
 
 .idea
+
+app-credential.json
