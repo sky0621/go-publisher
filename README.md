@@ -1,1 +1,1 @@
-# go-publisher-fb
+# go-publisher
