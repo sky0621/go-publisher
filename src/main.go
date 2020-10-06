@@ -39,6 +39,18 @@ func main() {
 		return c.String(http.StatusOK, newID)
 	})
 
+	e.GET("/add-teacher", func(c echo.Context) error {
+		newID := createUUID()
+		sendTopic(c.Request().Context(), project, "add-teacher:"+newID)
+		return c.String(http.StatusOK, newID)
+	})
+
+	e.GET("/add-student", func(c echo.Context) error {
+		newID := createUUID()
+		sendTopic(c.Request().Context(), project, "add-student:"+newID)
+		return c.String(http.StatusOK, newID)
+	})
+
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
