@@ -17,6 +17,3 @@ gcloud run deploy go-publisher \
   --region asia-northeast1 \
   --allow-unauthenticated \
   --set-env-vars PUB_PROJECT="${project}"
-
-# MEMO: use all user access
-#  --allow-unauthenticated \
