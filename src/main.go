@@ -99,6 +99,7 @@ func schoolHandler(project, path string) func(c echo.Context) error {
 
 		_, err = client.Collection("region").Doc(regionID).
 			Collection("school").Doc(schoolID).
+			Collection("operation").Doc(operationSequence).
 			Set(ctx, map[string]interface{}{
 				"operationSequence": operationSequence,
 				"order":             path + ":" + regionID + ":" + schoolID,
@@ -141,7 +142,7 @@ func handler(project, path string) func(c echo.Context) error {
 
 		_, err = client.Collection("region").Doc(regionID).
 			Collection("school").Doc(schoolID).
-			Collection("operation").Doc(newID).
+			Collection("operation").Doc(operationSequence).
 			Set(ctx, map[string]interface{}{
 				"operationSequence": operationSequence,
 				"order":             path + ":" + regionID + ":" + schoolID + ":" + newID,
